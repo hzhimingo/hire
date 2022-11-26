@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.31.50:3306/hire?characterEncoding=utf-8&useUnicode=true&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: imooc
