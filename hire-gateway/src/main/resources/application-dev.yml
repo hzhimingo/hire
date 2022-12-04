@@ -1,0 +1,22 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.31.50:8848
+    gateway:
+      discovery:
+        locator:
+          enabled: true # 动态路由，从注册中心根据微服务的名字获得目标节点
+      routes: # 路由规则
+        - id: userRoute
+          uri: lb://hire-user-service
+          predicates:
+            - Path=/u/**
+        - id: companyRoute
+          uri: lb://hire-company-service
+          predicates:
+            - Path=/c/**
+        - id: authRoute
+          uri: lb://hire-auth-service
+          predicates:
+            - Path=/a/**
