@@ -3,6 +3,12 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.7.3</version>
+        <relativePath />
+    </parent>
 
     <groupId>com.hzhimingo</groupId>
     <artifactId>hire</artifactId>
@@ -10,10 +16,15 @@
     <packaging>pom</packaging>
 
     <modules>
+        <!-- hire-common: 通用过程、工具类、枚举类、异常类、常用属性、资源类等等-->
         <module>hire-common</module>
+        <!-- hire-pojo: 所有实体类的管理, pojo、bean、entity、bo、vo、dto -->
         <module>hire-pojo</module>
+        <!-- hire-api: web接口的公用依赖 -->
         <module>hire-api</module>
+        <!-- hire-user: 用户服务 -->
         <module>hire-user</module>
+        <!-- hire-company: 企业服务 -->
         <module>hire-company</module>
     </modules>
 
@@ -23,7 +34,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-    <build>
+<!--    <build>
         <finalName>${project.artifactId}</finalName>
         <plugins>
             <plugin>
@@ -36,6 +47,6 @@
                 </configuration>
             </plugin>
         </plugins>
-    </build>
+    </build>-->
 
 </project>
