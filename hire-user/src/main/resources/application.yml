@@ -6,8 +6,19 @@ server:
     max-swallow-size: -1
 
 spring:
+  application:
+    name: hire-user
   profiles:
     active: dev
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.1.6:8849
+        namespace: 6eaae543-e71b-4d98-afca-11c1eb2d8442
+      config:
+        server-addr: 192.168.1.6:8849
+        file-extension: yaml
+        namespace: 6eaae543-e71b-4d98-afca-11c1eb2d8442
 
 mybatis-plus:
   mapper-locations: classpath*:/mapper/*.xml

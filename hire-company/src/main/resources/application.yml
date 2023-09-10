@@ -4,3 +4,18 @@ server:
     uri-encoding: UTF-8
     # Tomcat默认大小2M, 超过2M的文件不会被捕获, 需要调整此处大小为100MB或者-1即可
     max-swallow-size: -1
+
+spring:
+  application:
+    name: hire-company
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.1.6:8849
+        namespace: hire
+      config:
+        server-addr: 192.168.1.6:8849
+        file-extension: yaml
+        namespace: hire
