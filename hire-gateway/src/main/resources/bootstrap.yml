@@ -1,0 +1,30 @@
+server:
+  port: 8000
+  tomcat:
+    uri-encoding: UTF-8
+    max-swallow-size: -1
+
+spring:
+  application:
+    name: hire-gateway
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.1.6:8849
+        namespace: hire
+        group: ${spring.profiles.active}
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: hire-user
+          uri: lb://hire-user
+          predicates:
+            - Path=/u/**
+        - id: hire-company
+          uri: lb://hire-company
+          predicates:
+            - Path=/c/**

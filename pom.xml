@@ -26,6 +26,7 @@
         <module>hire-user</module>
         <!-- hire-company: 企业服务 -->
         <module>hire-company</module>
+        <module>hire-gateway</module>
     </modules>
 
     <properties>
