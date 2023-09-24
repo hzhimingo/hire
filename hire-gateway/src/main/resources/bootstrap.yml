@@ -24,8 +24,6 @@ spring:
           uri: lb://hire-user
           predicates:
             - Path=/u/**
-          filters:
-            - RewriteJumpRequestBody=true
         - id: hire-company
           uri: lb://hire-company
           predicates:
